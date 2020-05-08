@@ -2,3 +2,5 @@ node_modules
 dist
 .vscode
 desktop/client
+*.lock.*
+yarn-error.log
