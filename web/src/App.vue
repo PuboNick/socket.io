@@ -59,6 +59,9 @@ export default {
       label: ''
     }
   },
+  mounted() {
+    
+  },
   methods: {
     login: function() {
       this.$socket.emit('login', { username: this.userInfo.username, password: this.userInfo.password });
@@ -100,13 +103,6 @@ export default {
     },
     text: function(data) {
       this.messages.push({ id: this.random(), username: data.formUserName, content: data.content, userid: data.fromUserId });
-    },
-    connected: function(data) {
-      window.console.log(data);
-      this.$socket.emit('join', { sessionId: data, room: 'factoryTool' });
-    },
-    msg: function(data) {
-      window.console.log(data);
     }
   }
 }
